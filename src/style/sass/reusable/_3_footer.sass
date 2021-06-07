@@ -1,0 +1,54 @@
+.footer
+    background-image: linear-gradient(to bottom, #000, #1c2224)
+    border-top: 1px solid #1c2224
+    padding: 25px 0
+
+    .container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        column-gap: 15px
+        flex-wrap: wrap
+
+        @media screen and (max-width: 767px)
+            flex-direction: column
+
+        h6
+            color: $cWhite
+            font-family: inconsolata-medium
+            letter-spacing: 2px
+            font-size: 20px
+
+            @media screen and (max-width: 767px)
+                text-align: center
+                margin-bottom: 20px
+
+        ul
+            display: flex
+            align-items: center
+            flex-wrap: wrap
+
+            @media screen and (max-width: 767px)
+                justify-content: center            
+
+            li
+                a
+                    display: block
+                    background-color: $darkBlue
+                    border-radius: 50%
+                    height: 40px
+                    width: 40px
+                    border-radius: 30px
+                    color: $cWhite
+                    font-size: 22px
+                    text-align: center
+                    border: 2px solid transparent
+                    margin-right: 10px
+                    margin-bottom: 10px
+
+                    i
+                        line-height: 36px
+
+                    &:hover
+                        border-color: $cWhite
+                        background-color: transparent
