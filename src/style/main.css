@@ -59,6 +59,10 @@ body {
   color: #ff0066;
 }
 
+main {
+  overflow: hidden;
+}
+
 .container {
   width: 100%;
   padding: 0 1rem;
@@ -1609,6 +1613,12 @@ body {
   .nftmarket .container .nmItem figure {
     width: 100%;
     margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) and (max-width: 575px) {
+  .nftmarket .container .nmItem figure {
+    padding: 0;
   }
 }
 
