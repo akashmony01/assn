@@ -1,6 +1,6 @@
 // hero sec
 .hero
-    min-height: 100vh
+    height: 1020px
     background-color: $cBlack
     color: $cWhite
     padding: 150px 0
@@ -12,17 +12,19 @@
     background-position: center
 
     @media screen and (max-width: 991px)
-        min-height: auto
-        padding-bottom: 250px
+        height: auto
+        padding-bottom: 230px
+        background-position: 25% center
     
-        @media screen and (max-width: 767px)
-            padding-bottom: 210px
+        @media screen and (max-width: 768px)
+            padding-bottom: 200px
+            background-position: 30% center
 
             @media screen and (max-width: 640px)
-                padding-bottom: 200px
+                padding-bottom: 180px
 
                 @media screen and (max-width: 480px)
-                    padding-bottom: 170px
+                    padding-bottom: 145px
 
     .container
         background-size: 75% 100%
@@ -214,6 +216,19 @@
                     padding: 50px 40px
                     padding-bottom: 100px
 
+                &:before
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    width: 1px
+                    content: ''
+                    z-index: 1
+                    background: linear-gradient(0deg, rgba(255,145,0,1) 0%, rgba(0,170,212,1) 20%, rgba(0,170,212,1) 80%, rgba(255,145,0,1) 100%)
+
+                &:last-child
+                    &::before
+                        display: none
+
                 .itemNumber
                     position: absolute
                     top: 0
@@ -226,6 +241,11 @@
                     background-color: $hotRed
                     text-align: center
                     color: $cBlack
+                    background-image: url('../media/image/Gold-eagle.png')
+                    background-size: 120%
+                    background-position: center
+                    background-repeat: no-repeat
+                    z-index: 10
 
                     @media screen and (max-width: 640px)
                         width: 35px
@@ -246,12 +266,12 @@
                         position: absolute
                         top: 50%
                         height: 1px
-                        width: 50px
+                        width: 40px
                         background-color: $hotRed
                         content: ''
 
                         @media screen and (max-width: 640px)
-                            width: 10px
+                            width: 5px
                     
                     &::after
                         position: absolute
@@ -417,11 +437,13 @@
                                 
                 &:nth-child(odd)
                     margin-left: auto
-                    border-left: 1px solid $darkBlue
                     padding-right: 0
 
                     @media screen and (max-width: 640px)
                         padding-left: 20px
+
+                    &:before
+                        left: -1px
 
                     .itemNumber
                         left: 0
@@ -437,10 +459,10 @@
                                 left: 20px
 
                         &::before
-                            left: -50px
+                            left: -40px
 
                             @media screen and (max-width: 640px)
-                                left: -10px
+                                left: -5px
 
                         &::after
                             left: 0px
@@ -455,18 +477,22 @@
                 &:nth-child(even)
                     padding-left: 0
                     margin-right: auto
-                    border-right: 1px solid $darkBlue
 
                     @media screen and (max-width: 991px)
                         padding-right: 0
                         padding-left: 40px
                         text-align: left
                         border: none
-                        border-left: 1px solid $darkBlue
 
                         @media screen and (max-width: 640px)
                             padding-left: 20px
                         
+                    &:before
+                        right: -1px
+
+                        @media screen and (max-width: 991px)
+                            right: auto
+                            left: -1px
 
                     .itemNumber
                         right: 0
@@ -488,14 +514,14 @@
                                 left: 20px
 
                         &::before
-                            right: -50px
+                            right: -40px
 
                             @media screen and (max-width: 991px)
                                 right: auto
-                                left: -50px
+                                left: -40px
 
                                 @media screen and (max-width: 640px)
-                                    left: -10px
+                                    left: -5px
 
                         &::after
                             right: 0px
@@ -592,6 +618,10 @@
                 @media screen and (max-width: 991px)
                     width: 100%
 
+                .pBarBtn
+                    padding-left: 20%
+                    padding-bottom: 25px                        
+
                 .pgContainer
                     position: relative
                     margin-top: 35px
@@ -670,7 +700,7 @@
 
             .tkCounter
                 width: 40%
-                background-color: #000
+                background-color: $cBlack
                 color: $darkBlue
                 border: 1px solid $darkBlue
                 margin-top: -75px
@@ -804,12 +834,13 @@
                     font-size: 30px
                     margin-bottom: 25px
                     text-transform: uppercase
-                    color: $darkBlue
+                    color: $hotRed
 
                 p
                     margin-bottom: 15px
                     line-height: 1.5
                     opacity: .8
+                    color: $darkBlue
 
             &:last-child
                 padding-bottom: 0

@@ -7,10 +7,17 @@
     z-index: 9997
     transition: .3s
 
-    .container
+    .headerContainer
+        padding: 0 3rem
         display: flex
         align-items: start
         justify-content: space-between
+
+        @media screen and (max-width: 1280px)
+            padding: 0 2rem
+
+        @media screen and (max-width: 1024px)
+            padding: 0 1rem
         
         .headerLogo
             img
@@ -21,13 +28,22 @@
                 @media screen and (max-width: 768px)
                     height: 90px
 
+        .pBarBtn
+            margin-top: 15px
+            visibility: hidden
+            transition: .3s
+            opacity: 0
+
+            @media screen and (max-width: 767px)
+                display: none
+
         .headerRight
 
             
             .menuBtn
                 display: inline-block
                 color: $hotRed
-                font-size: 30px
+                font-size: 50px
                 text-align: center
                 position: sticky
                 z-index: 9999
@@ -100,8 +116,17 @@
                             &:hover
                                 color: $hotRed
 
+                        .pBarBtn
+                            display: none
+
+                            @media screen and (max-width: 767px)
+                                display: flex
+                                visibility: visible
+                                opacity: 1
+
+
     &.active
-        .container
+        .headerContainer
             .headerRight
                 nav
                     opacity: 1
@@ -130,11 +155,15 @@
         background-image: linear-gradient(to bottom, #000, #1c2224)
         border-bottom: 1px solid rgba(255, 255, 255, .15)
 
-        .container
+        .headerContainer
             .headerLogo
                 img
                     height: 75px
 
+            .pBarBtn
+                visibility: visible
+                opacity: 1
+
             .headerRight
                 .menuBtn
-                    padding-top: 22.5px
+                    padding-top: 14px

@@ -94,3 +94,6 @@ $(document).ready(function(){
 $(document).ready(function(){
     AOS.init();
 });
+
+// disabling the rightclick
+// document.addEventListener('contextmenu', event => event.preventDefault());

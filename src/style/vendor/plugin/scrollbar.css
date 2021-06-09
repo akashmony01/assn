@@ -9,5 +9,12 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: #00aad4ff;
-    border-radius: 5px;
+}
+
+body::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
 }
