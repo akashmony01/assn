@@ -1,5 +1,5 @@
 .header
-    padding: 15px 0
+    padding: 1rem 0
     position: fixed
     top: 0
     left: 0
@@ -44,11 +44,19 @@
                 display: inline-block
                 color: $hotRed
                 font-size: 50px
+                line-height: 1
                 text-align: center
                 position: sticky
                 z-index: 9999
                 opacity: .8
                 cursor: pointer
+                padding-top: 2rem
+
+                @media screen and (max-width: 1280px)
+                    padding-top: 1rem
+
+                @media screen and (max-width: 1024px)
+                    padding-top: 0
 
                 &:hover
                     opacity: 1
@@ -151,7 +159,6 @@
 
 
     &.scrolled
-        padding: 10px
         background-image: linear-gradient(to bottom, #000, #1c2224)
         border-bottom: 1px solid rgba(255, 255, 255, .15)
 
@@ -166,4 +173,4 @@
 
             .headerRight
                 .menuBtn
-                    padding-top: 14px
+                    padding-top: 12px
