@@ -452,6 +452,8 @@ main {
 
 @media screen and (max-width: 767px) {
   .header .headerContainer .headerRight nav ul li .pBarBtn {
+    visibility: visible;
+    opacity: 1;
     display: block;
   }
 }
