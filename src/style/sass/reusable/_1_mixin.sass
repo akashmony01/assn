@@ -6,21 +6,16 @@
 
 
 .pBarBtn
-    display: flex
-    flex-wrap: wrap
-    align-items: center
-    column-gap: 15px
-    row-gap: 15px 
-
     a
         text-transform: uppercase
-        display: block
+        display: inline-block
         font-family: inconsolata-bold
         border-radius: 5px
         font-size: 18px
         color: $cWhite
         background-color: $hotPink
         padding: 5px
+        margin: 5px 0
         background: linear-gradient(-45deg, rgba(255,0,102,1) 0%, rgba(0,136,204,1) 100%)
 
         &:hover
@@ -31,3 +26,7 @@
             display: block
             padding: 10px 15px
             background-color: $cBlack
+
+
+        &:first-child
+            margin-right: 10px

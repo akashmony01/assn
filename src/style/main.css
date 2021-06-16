@@ -8,29 +8,16 @@
   background-image: linear-gradient(to bottom, #000, #1c2224, #1c2224);
 }
 
-.pBarBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 15px;
-          column-gap: 15px;
-  row-gap: 15px;
-}
-
 .pBarBtn a {
   text-transform: uppercase;
-  display: block;
+  display: inline-block;
   font-family: inconsolata-bold;
   border-radius: 5px;
   font-size: 18px;
   color: #f2f2f2;
   background-color: #ff00ccff;
   padding: 5px;
+  margin: 5px 0;
   background: linear-gradient(-45deg, #ff0066 0%, #0088cc 100%);
 }
 
@@ -43,6 +30,10 @@
   display: block;
   padding: 10px 15px;
   background-color: #1c2224;
+}
+
+.pBarBtn a:first-child {
+  margin-right: 10px;
 }
 
 @font-face {
@@ -224,29 +215,16 @@ main {
   background-image: linear-gradient(to bottom, #000, #1c2224, #1c2224);
 }
 
-.pBarBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 15px;
-          column-gap: 15px;
-  row-gap: 15px;
-}
-
 .pBarBtn a {
   text-transform: uppercase;
-  display: block;
+  display: inline-block;
   font-family: inconsolata-bold;
   border-radius: 5px;
   font-size: 18px;
   color: #f2f2f2;
   background-color: #ff00ccff;
   padding: 5px;
+  margin: 5px 0;
   background: linear-gradient(-45deg, #ff0066 0%, #0088cc 100%);
 }
 
@@ -261,6 +239,10 @@ main {
   background-color: #1c2224;
 }
 
+.pBarBtn a:first-child {
+  margin-right: 10px;
+}
+
 .header {
   padding: 1rem 0;
   position: fixed;
@@ -270,6 +252,12 @@ main {
   z-index: 9997;
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: absolute;
+  }
 }
 
 .header .headerContainer {
@@ -311,7 +299,7 @@ main {
 }
 
 .header .headerContainer .pBarBtn {
-  margin-top: 15px;
+  margin-top: 7.5px;
   visibility: hidden;
   -webkit-transition: .3s;
   transition: .3s;
@@ -464,12 +452,12 @@ main {
 
 @media screen and (max-width: 767px) {
   .header .headerContainer .headerRight nav ul li .pBarBtn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    visibility: visible;
-    opacity: 1;
+    display: block;
   }
+}
+
+.header .headerContainer .headerRight nav ul li .pBarBtn a {
+  display: inline-block;
 }
 
 .header.active .headerContainer .headerRight nav {
@@ -500,23 +488,22 @@ main {
   opacity: 1;
 }
 
-.header.scrolled {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#1c2224));
-  background-image: linear-gradient(to bottom, #000, #1c2224);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.header.scrolled .headerContainer .headerLogo img {
-  height: 75px;
-}
-
-.header.scrolled .headerContainer .pBarBtn {
-  visibility: visible;
-  opacity: 1;
-}
-
-.header.scrolled .headerContainer .headerRight .menuBtn {
-  padding-top: 12px;
+@media screen and (min-width: 768px) {
+  .header.scrolled {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#1c2224));
+    background-image: linear-gradient(to bottom, #000, #1c2224);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .header.scrolled .headerContainer .headerLogo img {
+    height: 75px;
+  }
+  .header.scrolled .headerContainer .pBarBtn {
+    visibility: visible;
+    opacity: 1;
+  }
+  .header.scrolled .headerContainer .headerRight .menuBtn {
+    padding-top: 12px;
+  }
 }
 
 .footer {
@@ -1020,7 +1007,6 @@ main {
   top: 50%;
   height: 1px;
   width: 40px;
-  background-color: #ff0066;
   content: '';
 }
 
@@ -1042,6 +1028,7 @@ main {
 .roadmap .container .rmWrapper .rmItem .itemText {
   position: relative;
   min-width: 60%;
+  padding: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1051,9 +1038,6 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 25px;
-  -webkit-column-gap: 25px;
-          column-gap: 25px;
 }
 
 @media screen and (max-width: 640px) {
@@ -1062,12 +1046,9 @@ main {
   }
 }
 
-@media screen and (max-width: 640px) and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .roadmap .container .rmWrapper .rmItem .itemText {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: block;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
@@ -1084,7 +1065,7 @@ main {
 }
 
 .roadmap .container .rmWrapper .rmItem .itemText .itemImg {
-  width: 35%;
+  width: calc( 35% - 10px);
 }
 
 @media screen and (max-width: 480px) {
@@ -1188,7 +1169,7 @@ main {
 }
 
 .roadmap .container .rmWrapper .rmItem .itemText .itemList {
-  width: 65%;
+  width: calc( 65% - 10px);
   position: relative;
 }
 
@@ -1228,6 +1209,12 @@ main {
 @media screen and (max-width: 640px) {
   .roadmap .container .rmWrapper .rmItem .itemText .itemList .theList {
     padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .roadmap .container .rmWrapper .rmItem .itemText .itemList .theList {
+    height: auto;
   }
 }
 
@@ -1298,6 +1285,8 @@ main {
 
 .roadmap .container .rmWrapper .rmItem:nth-child(odd) .itemHead::before {
   left: -40px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff9100), to(#ff0066));
+  background: linear-gradient(0deg, #ff9100 0%, #ff0066 100%);
 }
 
 @media screen and (max-width: 640px) {
@@ -1384,12 +1373,16 @@ main {
 
 .roadmap .container .rmWrapper .rmItem:nth-child(even) .itemHead::before {
   right: -40px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff9100), to(#ff0066));
+  background: linear-gradient(180deg, #ff9100 0%, #ff0066 100%);
 }
 
 @media screen and (max-width: 991px) {
   .roadmap .container .rmWrapper .rmItem:nth-child(even) .itemHead::before {
     right: auto;
     left: -40px;
+    background: -webkit-gradient(linear, left bottom, left top, from(#ff9100), to(#ff0066));
+    background: linear-gradient(0deg, #ff9100 0%, #ff0066 100%);
   }
 }
 
@@ -1724,6 +1717,7 @@ main {
   padding-bottom: 45px;
   position: relative;
   text-transform: uppercase;
+  color: #00aad4;
 }
 
 @media screen and (max-width: 767px) {

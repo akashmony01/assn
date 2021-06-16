@@ -7,6 +7,9 @@
     z-index: 9997
     transition: .3s
 
+    @media screen and (max-width: 767px)
+        position: absolute
+
     .headerContainer
         padding: 0 3rem
         display: flex
@@ -29,7 +32,7 @@
                     height: 90px
 
         .pBarBtn
-            margin-top: 15px
+            margin-top: 7.5px
             visibility: hidden
             transition: .3s
             opacity: 0
@@ -128,9 +131,10 @@
                             display: none
 
                             @media screen and (max-width: 767px)
-                                display: flex
-                                visibility: visible
-                                opacity: 1
+                                display: block
+
+                            a
+                                display: inline-block
 
 
     &.active
@@ -159,18 +163,19 @@
 
 
     &.scrolled
-        background-image: linear-gradient(to bottom, #000, #1c2224)
-        border-bottom: 1px solid rgba(255, 255, 255, .15)
+        @media screen and (min-width: 768px)
+            background-image: linear-gradient(to bottom, #000, #1c2224)
+            border-bottom: 1px solid rgba(255, 255, 255, .15)
 
-        .headerContainer
-            .headerLogo
-                img
-                    height: 75px
+            .headerContainer
+                .headerLogo
+                    img
+                        height: 75px
 
-            .pBarBtn
-                visibility: visible
-                opacity: 1
+                .pBarBtn
+                    visibility: visible
+                    opacity: 1
 
-            .headerRight
-                .menuBtn
-                    padding-top: 12px
+                .headerRight
+                    .menuBtn
+                        padding-top: 12px
