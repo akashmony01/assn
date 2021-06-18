@@ -7,9 +7,6 @@
     z-index: 9997
     transition: .3s
 
-    @media screen and (max-width: 767px)
-        position: absolute
-
     .headerContainer
         padding: 0 3rem
         display: flex
@@ -22,15 +19,32 @@
         @media screen and (max-width: 1024px)
             padding: 0 1rem
         
-        .headerLogo
-            img
-                height: 125px
-                width: auto
-                transition: .3s
+        .logoBox
+            height: 125px
+            overflow: hidden
+            transition: .3s
 
-                @media screen and (max-width: 768px)
-                    height: 90px
+            @media screen and (max-width: 768px)
+                height: 90px
 
+            .headerLogo
+                display: block
+                
+                img
+                    height: 100%
+                    width: auto
+                    transition: .3s
+
+                    @media screen and (max-width: 768px)
+                        height: 90px
+
+            .logoBtn
+                @include btnStyle
+                display: none
+
+                @media screen and (max-width: 767px)
+                    display: block
+                    
         .pBarBtn
             margin-top: 7.5px
             visibility: hidden
@@ -113,19 +127,14 @@
 
                                 @media screen and (max-width: 575px)
                                     font-size: 20px
-                            i
-                                font-size: 25px
-                                margin-right: 15px
-
-                                @media screen and (max-width: 767px)
-                                    font-size: 20px
-
-                                    @media screen and (max-width: 575px)
-                                        font-size: 18px
+                            img
+                                width: 35px
+                                height: 35px
+                                margin-right: 10px
 
                             &.active,
                             &:hover
-                                color: $hotRed
+                                color: rgba(255,145,0,1)
 
                         .pBarBtn
                             display: none
@@ -165,19 +174,29 @@
 
 
     &.scrolled
-        @media screen and (min-width: 768px)
-            background-image: linear-gradient(to bottom, #000, #1c2224)
-            border-bottom: 1px solid rgba(255, 255, 255, .15)
+        background-image: linear-gradient(to bottom, #000, #1c2224)
+        border-bottom: 1px solid rgba(255, 255, 255, .15)
 
-            .headerContainer
+        .headerContainer
+            .logoBox
+                @media screen and (min-width: 768px)
+                    height: 75px
+
                 .headerLogo
-                    img
-                        height: 75px
+                    @media screen and (max-width: 767px)
+                        transform: translateY(-100%)
 
-                .pBarBtn
-                    visibility: visible
-                    opacity: 1
+                .logoBtn
+                    transform: translateY(-100%)
+                    margin-top: -18px
 
-                .headerRight
-                    .menuBtn
-                        padding-top: 12px
+            .pBarBtn
+                visibility: visible
+                opacity: 1
+
+            .headerRight
+                .menuBtn
+                    padding-top: 12px
+
+                    @media screen and (max-width: 767px)
+                        padding-top: 18px

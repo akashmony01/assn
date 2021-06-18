@@ -422,21 +422,15 @@
                                 margin-bottom: 10px
                                 font-family: inconsolata-bold
                                 font-size: 18px
-                                position: relative
-                                padding-left: 15px
+                                display: flex
+                                align-items: start
 
                                 @media screen and (max-width: 640px)
                                     font-size: 14px
 
-                                &::before
-                                    position: absolute
-                                    left: 0
-                                    top: 50%
-                                    transform: translateY(-50%)
-                                    height: 2px
-                                    width: 5px
-                                    background-color: $hotRed
-                                    content: ''
+                                span
+                                    display: block
+                                    margin-right: 10px
                                 
                 &:nth-child(odd)
                     margin-left: auto

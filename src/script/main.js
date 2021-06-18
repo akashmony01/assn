@@ -36,15 +36,16 @@ $(document).ready(function(){
     // onscroll function def
     function onScroll(event){
         var scrollPos = $(document).scrollTop();
-        $('#menu a').each(function () {
-            var currLink = $(this);
-            var refElement = $(currLink.attr("href"));
+        $('#menu a[href^="#"]').each(function () {
+            var currLink = $(this).attr("href");
+            var refElement = $(currLink);
+            
             if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
                 $('#menu ul li a').removeClass("active");
-                currLink.addClass("active");
+                $(this).addClass("active");
             }
             else{
-                currLink.removeClass("active");
+                $(this).removeClass("active");
             }
         });
     }
@@ -78,17 +79,6 @@ $(window).scroll(function() {
         }
     });
 });
-
-// iframe aspect ration
-$(document).ready(function(){
-    var width = $("#aboutVideo iframe").width();
-    var ratio = 9/16;
-    var height = width * ratio;
-
-    // set height
-    $("#aboutVideo iframe").css("height", height)
-});
-
 
 // aos init
 $(document).ready(function(){
