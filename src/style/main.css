@@ -18,7 +18,8 @@
   background-color: #ff00ccff;
   padding: 5px;
   background: linear-gradient(-45deg, #ff0066 0%, #0088cc 100%);
-  margin: 5px;
+  margin: 5px 0;
+  margin-right: 10px;
 }
 
 .pBarBtn a:hover {
@@ -30,10 +31,6 @@
   display: block;
   padding: 10px 15px;
   background-color: #1c2224;
-}
-
-.pBarBtn a:first-child {
-  margin-left: 0;
 }
 
 .pBarBtn a:last-child {
@@ -229,7 +226,8 @@ main {
   background-color: #ff00ccff;
   padding: 5px;
   background: linear-gradient(-45deg, #ff0066 0%, #0088cc 100%);
-  margin: 5px;
+  margin: 5px 0;
+  margin-right: 10px;
 }
 
 .pBarBtn a:hover {
@@ -241,10 +239,6 @@ main {
   display: block;
   padding: 10px 15px;
   background-color: #1c2224;
-}
-
-.pBarBtn a:first-child {
-  margin-left: 0;
 }
 
 .pBarBtn a:last-child {
